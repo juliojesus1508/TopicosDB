@@ -1,0 +1,31 @@
+{% extends 'request_vs.html' %}
+
+{% block content %}
+<table>
+    <thead>
+    <tbody>
+        <tr>
+            <th>Titulo</th>
+            <th>Autor(es)</th>            
+            <th>Peso</th>
+            <th>Index</th>
+            <th>archivo</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+    {%for element in result%}
+        <tr>
+            <td>{{result[element]['title'] }}</td>
+            <td>{{result[element]['author'] }} </td>            
+            <td>{{result[element]['weight'] }}</td>
+            <td>{{result[element]['doc_id'] }}</td>
+            <td> <a href="/view/{{result[element]['file'] }}">{{result[element]['file'] }} </a></td>
+            
+        </tr>
+    {%endfor%} 
+    </tbody>
+</table>            
+{% endblock %}
+
+
